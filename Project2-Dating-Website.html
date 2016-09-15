@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dating Information Entry Screen</title>
+
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+
+</head>
+
+<style>
+    h1 {font-family: "Times New Roman"}
+    fieldset {border: solid; border-width: 10px; border-color: #ffff00; background-color: #ffffe0;
+        width: 720px;}
+    .textarea {
+        width: 360px;
+        height: 50px;}
+    .colume1 {text-align: right; vertical-align: top}
+    .colume2 {text-align: left}
+     .sliders {
+         row-span: 2;}
+    label {display:inline-block; width: 180px; text-align: right; vertical-align: top;}
+    textarea {display:inline-block; width: 180px; text-align: right}
+    article, aside, figure, footer, header, hgroup, menu, nav, section { display: block;}
+    #minlabels {width: 45px; background-color: #B7000C; text-align: center; color:white }
+    #maxlabels {width: 45px; background-color: #920081; text-align: center; color:white}
+
+</style>
+
+
+<body>
+<form method="post">
+<h1 align="middle">Please Enter Your Details For Our Dating Website!</h1>
+
+<!--Your Face-->
+<fieldset id="faceinfo">
+    <legend>Your face</legend>
+    <table>
+        <tr>
+            <td>
+                <label class="label" for="file">Your Image:</label>
+                <input type="file" onchange="readURL(this);" required id="file">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="preview">Image preview:</label>
+
+                <img id="preview" src="#" alt="your image"/>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<!--Your Gerneral Details-->
+
+<fieldset>
+    <legend>Your General Details</legend>
+    <table>
+        <tr>
+            <td>
+                <label for="generaldetails">Name:</label>
+                <input id="generaldetails" type="text" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Genderinfo">Gender:</label>
+                <input id="Genderinfo" type="checkbox" required>male <input id="Gender" type="checkbox" required>Female
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Age">Age:</label>
+                <input id="Age" type="number" required style="width:21px">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Date of birth">Date of birth:</label>
+                <input id="Date of birth" type="date" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Favorite color">Favorite color:</label>
+                <input id="Favorite color" type="color" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="country">Which country:</label>
+                <select id="country">
+                    <option value="Country Not Listed">Country Not Listed</option>
+                    <option value="United States">United States</option>
+                    <option value="Mexico">Mexico</option>
+                    <option value="China">China</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Russia">Russia</option>
+                    <option value="France">France</option>
+                </select>
+            </td>
+
+        </tr>
+
+    </table>
+</fieldset>
+
+<!--Your Indicators-->
+    <!-- Your Indicators --> <fieldset>
+    <legend>Your Indicators</legend>
+    <table>
+    <tr>
+        <td class="colume1">
+            <table>
+                <tr>
+                    <td><label for="height">Height:</label></td>
+                </tr>
+                <tr>
+                    <td><label for="salary">Salary:</label></td>
+                </tr>
+            </table>
+        </td>
+        <td class="sliderlabel" id="minlabels">
+            Short
+            <br hidden>
+            Poor
+        </td>
+        <td class="sliders">
+            <input id="height" type="range" min="0" max="100">
+            <br>
+            <input id="salary" type="range" min="0" max="100">
+        </td>
+        <td class="sliderlabel" id="maxlabels">
+            Tall
+            <br>
+            Rich
+        </td>
+    </tr>
+</table>
+</fieldset>
+    <br>
+<!--Your Contact Information-->
+<fieldset>
+    <legend>Your Contact Information</legend>
+    <table>
+        <tr>
+            <td>
+                <label for="Email">Email:</label>
+                <input id="Email" type="text" required>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Mobile">Mobile:</label>
+                <input id="Mobile" type="tel">
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="Address">Address:</label>
+                <textarea class="textarea"></textarea>
+
+                <label for="method">Method to contact you:</label>
+                <input id="method" type="checkbox">Email <input type="checkbox">Whatsapp <input type="checkbox">In-app
+                chat
+            </td>
+        </tr>
+    </table>
+</fieldset>
+<!--submit button-->
+
+<table>
+    <tr>
+        <td>
+            <label1 for="submit"></label1>
+            <input id="submit" type="submit">
+
+        </td>
+    </tr>
+</table>
+</form>
+<!-- Java code -->
+<script type="text/javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#preview')
+                            .attr('src', e.target.result)
+                            .width(150)
+                            .height(200);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+</script>
+</body>
+</html>
